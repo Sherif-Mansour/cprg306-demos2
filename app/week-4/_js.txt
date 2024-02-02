@@ -1,0 +1,92 @@
+╭─ 21:18:47 |  23 Jan, Tuesday |   in  C:  Dev_II  temp  cprg306-demos2
+╰─❯
+ *  History restored 
+
+ node
+Welcome to Node.js v20.11.0.
+Type ".help" for more information.
+> function add(a,b) {
+... return a + b;
+... }
+undefined
+> add(3,4);
+7
+> const addVar = function (a,b) {
+... return a + b;
+... }
+undefined
+> addVar(3,4);
+7
+> const addArrow = (a,b) => {return a + b; }
+undefined
+> addArrow(3,4)
+7
+> const addArrowAbbrev = (a,b) => a + b;
+undefined
+> addArrowAbbrev(3,4);
+7
+> // higher order functions
+undefined
+> function getOp(op) {
+... if (op === "add") {return ( (a,b) => a + b) }
+... if (op === "sub") {return ( (a,b) => a -b) }
+... const myAdd = getOp("add");
+... }
+undefined
+> function getOp(op) {
+... if (op === "add") {return ( (a,b) => a + b) }
+... if (op === "sub") {return ( (a,b) => a - b) }
+... }
+undefined
+> const myAdd = getOp("add");
+undefined
+> myAdd(3,4);
+7
+> const mySub = getOp("sub");
+undefined
+> console.log( mySub(4,3) );
+1
+undefined
+> ( (a,b) => a * b )(3,4)
+
+&& - and 
+
+let a = true;
+let b = false;
+if (a && b) { console.log("a and b are true"); }
+else {console.log("a and b are not both true"); }
+
+
+> foo()
+'foo'
+> // foo without the brackets is a reference to the function . foo with the brackets is when you call the function.
+undefined
+> function getOp(op) {
+... if (op === "add") return ( function (a,b) { return a + b; } );
+... if (op === "sub") return ( function (a,b) { return a - b; } );
+... }
+undefined
+> let myAdd = getOp("add");
+undefined
+> myAdd(3,4);
+7
+> let mySub = getOp("sub");
+undefined
+> mySub(4,3);
+1
+> function foo2() {return "foo"; }
+undefined
+> const foo3 = function () { return "foo3"; }
+undefined
+> const arrowAdd = (a,b) => a + b;
+undefined
+> const arrowAddAlternate = (a,b) => { console.log(a); return a + b; }
+undefined
+> arrowAddAlternate(4,5);
+4
+9
+> arrowAdd(5,6);
+11
+> ( () => arrowAdd(3,4))(); // anonymous function
+7
+> .exit
