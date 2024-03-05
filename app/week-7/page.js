@@ -50,6 +50,7 @@ export default function Page() {
   }, []); // [] means that the effect will only run once, after the first render
 
   useEffect(() => {
+    if (selectedBreed === "") return;
     loadBreedImage(selectedBreed);
   }, [selectedBreed]);
 
