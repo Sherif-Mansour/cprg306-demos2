@@ -1,0 +1,31 @@
+"use client";
+
+import { useState } from 'react';
+
+import DogList from './dog-list.js';
+import DogForm from './dog-form.js';
+import dogData from './dog-data.json';
+
+export default function Page() {
+    const [dogs, setDogs] = useState(dogData);
+
+    const addDog = (dog) => {
+        setDogs([...dogs, dog]);    
+        // you cannot do something like dogs.push(dog) because it would mutate the state directly
+        // the spread operator ... creates a new array with the new dog added
+    };
+
+    const deleteDog = (id) => {
+        setDogs(dogs.filter((dog) => dog.id !== id));
+    };
+
+    return (
+        <div>
+            <h1>Week 6 New</h1>
+            <h2>Manage Dogs</h2>
+            <DogList dogs={dogs} onDelete={deleteDog} />
+            <DogForm onAddDog={addDog} />
+
+        </div>
+    )
+}
